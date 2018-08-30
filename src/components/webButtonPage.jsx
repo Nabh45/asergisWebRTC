@@ -65,7 +65,9 @@ class WebButtonPage extends React.Component {
                 <Button onClick={(e) => this.startVideo(e)} variant="contained" color={this.state.class}>
                     Click
               </Button>
+              <ButtonClass />
             </div>
+            
         )
     }
 }

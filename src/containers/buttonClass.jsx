@@ -1,27 +1,28 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import WebButtonPage from '../components/webButtonPage';
+import { changeButtonClass } from '../actions/index';
 
-// class ButtonClass extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <li>one</li>
-//                 <li>two</li>
-//                 <li>three</li>
-//             </div>
-//         )
-//     }
-// }
-
-function mapStateToProps(state) {			 
-    
-    buttonClass: state.buttonClass
+class ButtonClass extends React.Component {
+    render() {
+        return (
+            <div>
+            <button onClick={() => this.props.changeButtonClass()}>{this.props.buttonClass.classButton}</button>
+            </div>
+        )
+    }
 }
 
-//export default connect(mapStateToProps)(WebButtonPage);
+function mapStateToProps(state) {
+    return {
+        buttonClass: state.buttonClass
+    }
+}
 
-export default connect(
-    mapStateToProps,
-  )(WebButtonPage)
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({
+        changeButtonClass: changeButtonClass
+    }, dispatch)
+}
+
+export default connect(mapStateToProps,matchDispatchToProps)(ButtonClass);
