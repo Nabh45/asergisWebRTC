@@ -2,16 +2,20 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { changeButtonClass } from '../actions/index';
+import WebButtonPage  from '../components/webButtonPage';
 
-class ButtonClass extends React.Component {
-    render() {
-        return (
-            <div>
-            <button onClick={() => this.props.changeButtonClass()}>{this.props.buttonClass.classButton}</button>
-            </div>
-        )
-    }
-}
+// class ButtonClass extends React.Component {
+    
+//     render() {
+        
+//         return (
+//             <div>
+//                 <WebButtonPage />
+//             <button onClick={() => this.props.changeButtonClass()}>{this.props.buttonClass.classButton}</button>
+//             </div>
+//         )
+//     }
+// }
 
 function mapStateToProps(state) {
     return {
@@ -25,4 +29,4 @@ function matchDispatchToProps(dispatch) {
     }, dispatch)
 }
 
-export default connect(mapStateToProps,matchDispatchToProps)(ButtonClass);
+export default connect(mapStateToProps,matchDispatchToProps)(WebButtonPage);

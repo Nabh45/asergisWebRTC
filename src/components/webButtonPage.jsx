@@ -4,7 +4,7 @@ import ButtonClass from '../containers/buttonClass';
 
 class WebButtonPage extends React.Component {
 
-    constructor(context, props) {
+    constructor(props) {
         super(props);
         this.Mediastream = null;
         this.video = null;
@@ -12,7 +12,6 @@ class WebButtonPage extends React.Component {
             check: false,
             class: 'primary'
         }
-        
     }
 
     initializeWebCam() {
@@ -65,9 +64,8 @@ class WebButtonPage extends React.Component {
                 <Button onClick={(e) => this.startVideo(e)} variant="contained" color={this.state.class}>
                     Click
               </Button>
-              <ButtonClass />
+                
             </div>
-            
         )
     }
 }
