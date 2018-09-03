@@ -1,7 +1,9 @@
-export const changeButtonClass = (buttonClass) => {
-    console.log('hello I am inside the action');
-    return {
-        type : 'Button_Clicked',
-        payload: buttonClass
-    }
+export function changeButtonClass(buttonClass) {
+    console.log('action is called'+JSON.stringify(buttonClass));
+
+    return function(dispatch) {
+        dispatch({type: "Change_ButtonClass",
+        payload: (buttonClass == 'primary' ? 'secondary' : 'primary')
+    });
 } 
+}

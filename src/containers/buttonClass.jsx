@@ -2,30 +2,19 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { changeButtonClass } from '../actions/index';
-import WebButtonPage  from '../components/webButtonPage';
-
-// class ButtonClass extends React.Component {
-    
-//     render() {
-        
-//         return (
-//             <div>
-//                 <WebButtonPage />
-//             <button onClick={() => this.props.changeButtonClass()}>{this.props.buttonClass.classButton}</button>
-//             </div>
-//         )
-//     }
-// }
+import WebButtonPage from '../components/webButtonPage';
 
 function mapStateToProps(state) {
+    console.log('--------------inside map to state'+JSON.stringify(state))
     return {
-        buttonClass: state.buttonClass
+        buttonClass: state.buttonClass.classButton
     }
 }
 
 function matchDispatchToProps(dispatch) {
+    console.log('inside the match Dispatch Props++++++++++++++++++++++++')
     return bindActionCreators({
-        changeButtonClass: changeButtonClass
+        changeButtonClass123: changeButtonClass
     }, dispatch)
 }
 

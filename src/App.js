@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import WebButtonPage from './components/webButtonPage';
+import WebButtonPage from './containers/buttonClass';
+// import WebButtonPage from './components/webButtonPage';
 import logo from './logo.svg';
 import './App.css';
 

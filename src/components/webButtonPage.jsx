@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import ButtonClass from '../containers/buttonClass';
+import {changeButtonClass} from '../actions/index'
 
 class WebButtonPage extends React.Component {
 
@@ -39,6 +39,8 @@ class WebButtonPage extends React.Component {
     }
 
     startVideo() {
+        //this.props.dispatch(changeButtonClass(this.props.buttonClass));
+        this.props.changeButtonClass123();
         if (this.state.check == false) {
             this.initializeWebCam();
             this.setState({
@@ -61,10 +63,9 @@ class WebButtonPage extends React.Component {
                     <video id="video" style={{ width: '400', height: '300' }}></video>
                 </div>
 
-                <Button onClick={(e) => this.startVideo(e)} variant="contained" color={this.state.class}>
+                <Button onClick={(e) => this.startVideo(e)} variant="contained" color={this.props.buttonClass}>
                     Click
               </Button>
-                
             </div>
         )
     }
