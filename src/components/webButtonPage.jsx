@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import {changeButtonClass} from '../actions/index'
+import { changeButtonClass } from '../actions/index'
 
 class WebButtonPage extends React.Component {
 
@@ -9,8 +9,7 @@ class WebButtonPage extends React.Component {
         this.Mediastream = null;
         this.video = null;
         this.state = {
-            check: false,
-            class: 'primary'
+            check: false
         }
     }
 
@@ -32,26 +31,23 @@ class WebButtonPage extends React.Component {
             video.src = vendorUrl.createObjectURL(stream);
             self.MediaStream = stream.getTracks()[0];
             video.play();
-            console.log(vendorUrl);
         }, function (error) {
             //code for facing the error
         })
     }
 
     startVideo() {
-        //this.props.dispatch(changeButtonClass(this.props.buttonClass));
-        this.props.changeButtonClass123();
         if (this.state.check == false) {
+            this.props.handleChangeButton('secondary');
             this.initializeWebCam();
             this.setState({
-                check: true,
-                class: 'secondary'
+                check: true
             })
         } else {
+            this.props.handleChangeButton('primary');
             this.MediaStream.stop();
             this.setState({
-                check: false,
-                class: 'primary'
+                check: false
             })
         }
     }

@@ -1,5 +1,5 @@
-export default function () {
+export default function (state, action) {
     return {
-        classButton: 'primary'
+        classButton: action.payload || 'primary'
     }
 }
