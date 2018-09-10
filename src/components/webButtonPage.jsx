@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { changeButtonClass } from '../actions/index'
+import { changeButtonClass } from '../actions/index';
+import '../style/style.css'
 
 class WebButtonPage extends React.Component {
 
@@ -55,8 +56,8 @@ class WebButtonPage extends React.Component {
     render() {
         return (
             <div>
-                <div className="both" style={{ width: '400px', background: '#ccc', border: '10px solid #ddd', margin: '0 auto' }}>
-                    <video id="video" style={{ width: '400', height: '300' }}></video>
+                <div className="both">
+                    <video id="video"></video>
                 </div>
 
                 <Button onClick={(e) => this.startVideo(e)} variant="contained" color={this.props.buttonClass}>
